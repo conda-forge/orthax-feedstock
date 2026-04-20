@@ -1,7 +1,7 @@
 schema_version: 1
 
 context:
-  version: "0.2.8"
+  version: "0.2.9"
   python_min: "3.10"
 
 package:
@@ -10,11 +10,7 @@ package:
 
 source:
   url: https://pypi.org/packages/source/o/orthax/orthax-${{ version }}.tar.gz
-  sha256: a08850ef2a35889b604043dab591801b35d1bb1acf65bc70c60ddd90493d878d
-  # c.f. https://github.com/f0uriest/orthax/pull/92
-  patches:
-    - remove-deprecated-setup_requires.patch
-    - add-missing-requirements.txt.patch
+  sha256: 2ac290195a7c61fc7b8c58321ad7a7292eab6a21b9b0e3538654152cd30d4f12
 
 build:
   number: 0
@@ -30,7 +26,7 @@ requirements:
   run:
     - python >=${{ python_min }}
     - equinox >=0.11.0,<0.14
-    - jax >=0.4.36,<0.10
+    - jax >=0.4.36,<0.11
     - numpy >=1.20.0,<2.5
 
 tests:
