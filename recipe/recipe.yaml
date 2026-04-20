@@ -11,10 +11,6 @@ package:
 source:
   url: https://pypi.org/packages/source/o/orthax/orthax-${{ version }}.tar.gz
   sha256: 2ac290195a7c61fc7b8c58321ad7a7292eab6a21b9b0e3538654152cd30d4f12
-  # c.f. https://github.com/f0uriest/orthax/pull/92
-  patches:
-    - remove-deprecated-setup_requires.patch
-    - add-missing-requirements.txt.patch
 
 build:
   number: 0
