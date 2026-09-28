@@ -1,7 +1,7 @@
 schema_version: 1
 
 context:
-  version: "0.2.9"
+  version: "0.2.10"
   python_min: "3.10"
 
 package:
@@ -10,7 +10,7 @@ package:
 
 source:
   url: https://pypi.org/packages/source/o/orthax/orthax-${{ version }}.tar.gz
-  sha256: 2ac290195a7c61fc7b8c58321ad7a7292eab6a21b9b0e3538654152cd30d4f12
+  sha256: 71079de617d1a13040e1bf68666f8f5ba4c9a35f515b811e7b6a051a53580f8e
 
 build:
   number: 0
@@ -20,14 +20,16 @@ build:
 requirements:
   host:
     - python ${{ python_min }}.*
-    - setuptools >=40.8.0
-    - versioneer-518
+    - setuptools >=77.0.0
+    - versioneer >=0.29
+    # versioneer[toml] on python < 3.11
+    - tomli
     - pip
   run:
     - python >=${{ python_min }}
     - equinox >=0.11.0,<0.14
-    - jax >=0.4.36,<0.11
-    - numpy >=1.20.0,<2.5
+    - jax >=0.5.0,<0.12
+    - numpy >=1.25.0,<2.6
 
 tests:
   - python:
