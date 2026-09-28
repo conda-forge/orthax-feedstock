@@ -20,14 +20,16 @@ build:
 requirements:
   host:
     - python ${{ python_min }}.*
-    - setuptools >=40.8.0
-    - versioneer-518
+    - setuptools >=77.0.0
+    - versioneer >=0.29
+    # versioneer[toml] on python < 3.11
+    - tomli
     - pip
   run:
     - python >=${{ python_min }}
     - equinox >=0.11.0,<0.14
-    - jax >=0.4.36,<0.11
-    - numpy >=1.20.0,<2.5
+    - jax >=0.5.0,<0.12
+    - numpy >=1.25.0,<2.6
 
 tests:
   - python:
