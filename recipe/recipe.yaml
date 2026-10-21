@@ -2,7 +2,7 @@ schema_version: 1
 
 context:
   version: "0.2.11"
-  python_min: "3.10"
+  python_min: "3.11"
 
 package:
   name: "orthax"
@@ -22,13 +22,11 @@ requirements:
     - python ${{ python_min }}.*
     - setuptools >=77.0.0
     - versioneer >=0.29
-    # versioneer[toml] on python < 3.11
-    - tomli
     - pip
   run:
     - python >=${{ python_min }}
     - equinox >=0.11.0,<0.14
-    - jax >=0.5.0,<0.12
+    - jax >=0.5.0,<0.13
     - numpy >=1.25.0,<2.6
 
 tests:
